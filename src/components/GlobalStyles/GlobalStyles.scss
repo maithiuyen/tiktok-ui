@@ -3,6 +3,14 @@
 
 :root {
     --primary: #fe2c55;
+    --black: #000;
+    --light: #fff;
+    --text-color: #333;
+
+    // Default layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+
 }
 * {
     margin: 0;
@@ -18,4 +26,15 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button, input, [tabindex] {
+    // Default nó có giá trị, mình set none đi để tự set cho đẹp
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);// đổi màu default của link là màu xanh thành màu đen
+    text-decoration: none;// bỏ gạch chân link
 }
