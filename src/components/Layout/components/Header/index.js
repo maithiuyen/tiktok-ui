@@ -2,16 +2,15 @@ import classNames from "classnames/bind";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faCircleQuestion,
-    faCircleXmark, faCloudUpload, faCoins, faEarthAsia,
+    faCircleXmark, faCoins, faEarthAsia,
     faEllipsisVertical, faGear, faInbox, faKeyboard,
-    faMagnifyingGlass, faMessage,
-    faSignIn, faSignOut,
+    faMagnifyingGlass, faSignOut,
     faSpinner, faUser
 } from "@fortawesome/free-solid-svg-icons";
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
-import {useEffect, useState} from "react"; // optional
+import {useState} from "react"; // optional
 
 import Button from "~/components/Button";
 import images from "~/assets/images";
@@ -20,6 +19,8 @@ import {Wrapper as PopperWrapper} from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
 import {faModx} from "@fortawesome/free-brands-svg-icons";
+import {InboxIcon, MessageIcon} from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -149,12 +150,12 @@ function Header() {
                     <>
                         <Tippy content='Messages'>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faMessage}/>
+                                <MessageIcon />
                             </button>
                         </Tippy>
                         <Tippy content='Inbox'>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faInbox}/>
+                                <InboxIcon />
                             </button>
                         </Tippy>
                     </>
@@ -170,7 +171,7 @@ function Header() {
                 <Menu items= {currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
 
                     {currentUser ? (
-                        <img src={'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8d882bdb02a12737e891b2257b9f3a31~c5_100x100.jpeg?x-expires=1681995600&x-signature=upUEtnQOVsRMg1RehS0ZFCWSgBk%3D'} className={cx('user-avatar')} alt={'NVC'} />
+                        <Image src={'https://p1-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8d882bdb02a12737e891b2257b9f3a31~c5_100x100.jpeg?x-expires=1681995600&x-signature=upUEtnQOVsRMg1RehS0ZFCWSgBk%3D'} className={cx('user-avatar')} alt={'NVC'} />
                     ) : (
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}/>
